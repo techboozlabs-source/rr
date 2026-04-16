@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #050505;
+  --color-accent: #FF4D00;
+  --color-card-bg: #111111;
+  --color-text-dim: #888888;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-border-dim: rgba(255, 255, 255, 0.1);
+  
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-white font-sans;
+    background: radial-gradient(circle at 50% 0%, #1a0f0a 0%, #050505 100%);
+    min-height: 100vh;
+  }
+}
+
+.glass-panel {
+  @apply bg-glass backdrop-blur-xl border border-border-dim;
+}
+
+.immersive-card {
+  @apply bg-card-bg border border-border-dim rounded-2xl transition-all duration-300 hover:border-accent;
+}
+
+.accent-button {
+  @apply bg-accent text-white font-bold uppercase tracking-widest rounded-xl transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-accent/20;
+}
